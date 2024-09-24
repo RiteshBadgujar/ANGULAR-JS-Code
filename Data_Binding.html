@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="Databinding-Ritesh_Badgujar">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var myvar = angular.module("Databinding-Ritesh_Badgujar", []);
+        myvar.controller("infoctrl", function ($scope) {
+            $scope.name = "Ritesh Badgujar";
+            $scope.number = 377499;
+        });
+    </script>
+
+</head>
+
+<body>
+    <div ng-controller="infoctrl">
+        <div>
+            Enter the Name : <input type="text" ng-model="name">
+            Enter the <input type="text" ng-model="number">
+            <p>My Name is {{ name }}</p>
+            <p>My Number is {{number}}</p>
+            <p></p>
+        </div>
+    </div>
+</body>
+
+</html>
