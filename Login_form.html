@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="login_Form_Ritesh">
+
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var myvar = angular.module("login_Form_Ritesh", []);
+        myvar.controller("loginctrl", function ($scope) {
+
+            $scope.massage = '';
+            $scope.uservadidation = '';
+            $scope.passwordvalidation = '';
+
+            $scope.submitform = function () {
+                if ($scope.username === "") {
+                    $scope.username = "Please enter the Usrname ";
+                }
+                else if ($scope.password === "") {
+                    $scope.passwordvalidation = "Please enter the password";
+                }
+                else if ($scope.username === "Ritesh" && $scope.password === "123") {
+                    $scope.massage = "Welcome Admin";
+                } else {
+                    $scope.massage = " Sorry !!! Invalid user .";
+                }
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div ng-controller="loginctrl">
+        <h1> Login Form</h1>
+        <form ng-submit="submitform()">
+            Enter the Username : <input type="text" ng-model="username" required><br>
+            <p>{{uservadidation}}</p>
+            Enter the password : <input type="text" ng-model="password" required><br>
+            <p>{{passwordvalidation}}</p>
+            <button type="Submit">Submit</button>
+            <p>{{massage}}</p>
+        </form>
+    </div>
+</body>
+
+</html>
